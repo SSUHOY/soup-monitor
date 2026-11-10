@@ -71,7 +71,7 @@ export const MetricChart: React.FC<Props> = ({ data, metricKey, title, color }) 
           stroke: color,
           width: 2,
           points: { show: data.length < 2000 },
-          value: (_u, v) => (v != null && !Number.isNaN(v) ? (v < 0.01 ? v.toExponential(2) : v.toFixed(4)) : 'NaN'),
+          value: (_u, v) => (v != null && !Number.isNaN(v) ? (v < 0.01 ? v.toExponential(2) : v.toFixed(4)) : '-'),
         },
       ],
       cursor: {
