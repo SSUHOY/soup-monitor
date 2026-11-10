@@ -2,7 +2,7 @@
 
 A high-performance training-run monitor built for the Soup Frontend Engineer take-home task. Designed to handle large ML training metric streams (up to 1,000,000+ data points) with absolute data truthfulness and zero Main Thread UI freezing.
 
-Live Demo: [Insert your Netlify/Vercel URL here]
+Live Demo: https://www.loom.com/share/09f718ceaa90496bb3874e680e7dc6d3
 
 ---
 
@@ -30,7 +30,6 @@ Live Demo: [Insert your Netlify/Vercel URL here]
 
 Automated tests cover metric sanitization, spike preservation during downsampling, `NaN` line-break conversions, and step sorting:
 
-```bash
 npm test
 
 ## ⚡ Performance Audit (CPU Throttling ×4)
