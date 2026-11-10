@@ -29,7 +29,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
     });
 
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col h-full">
+    <div className="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col max-h-[800px]">
       <h2 className="text-lg font-semibold text-white mb-4">Runs list</h2>
 
       <div className="space-y-3 mb-4">
@@ -68,7 +68,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
         </div>
       </div>
 
-      <div className="overflow-y-auto space-y-2 pr-1 flex-1 max-h-[960px]">
+      <div className="overflow-y-auto space-y-2 pr-1 flex-1 max-h-[528px]">
         {filteredRuns.length === 0 ? (
           <div className="text-center py-8 text-slate-500 text-sm">
             Runs not found
