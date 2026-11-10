@@ -11,7 +11,7 @@ interface Props {
 export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) => {
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'completed' | 'failed'>('all');
-  const [sortBy, setSortBy] = useState<'name' | 'points' | 'date'>('points');
+  const [sortBy] = useState<'name' | 'points' | 'date'>('points');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
   const filteredRuns = runs
@@ -37,7 +37,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
-            placeholder="Поиск по названию..."
+            placeholder="Search by name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full bg-slate-900 border border-slate-700 rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
@@ -68,7 +68,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
         </div>
       </div>
 
-      <div className="overflow-y-auto space-y-2 pr-1 flex-1 max-h-[500px]">
+      <div className="overflow-y-auto space-y-2 pr-1 flex-1 max-h-[960px]">
         {filteredRuns.length === 0 ? (
           <div className="text-center py-8 text-slate-500 text-sm">
             Runs not found

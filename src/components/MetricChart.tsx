@@ -47,13 +47,13 @@ export const MetricChart: React.FC<Props> = ({ data, metricKey, title, color }) 
           stroke: '#64748b',
           grid: { stroke: '#334155', width: 1 },
           ticks: { stroke: '#334155' },
-          values: (u, splits) => splits.map(v => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v),
+          values: (_u, splits) => splits.map(v => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v),
         },
         {
           stroke: '#64748b',
           grid: { stroke: '#334155', width: 1 },
           ticks: { stroke: '#334155' },
-          values: (u, splits) => splits.map(v => {
+          values: (_u, splits) => splits.map(v => {
             if (v === 0) return '0';
             if (Math.abs(v) < 0.01) return v.toExponential(1);
             if (Math.abs(v) < 10) return v.toFixed(2);
@@ -64,14 +64,14 @@ export const MetricChart: React.FC<Props> = ({ data, metricKey, title, color }) 
       series: [
         {
           label: 'Step',
-          value: (u, v) => (v != null ? `${v.toLocaleString()}` : '-'),
+          value: (_u, v) => (v != null ? `${v.toLocaleString()}` : '-'),
         },
         {
           label: title,
           stroke: color,
           width: 2,
           points: { show: data.length < 2000 },
-          value: (u, v) => (v != null && !Number.isNaN(v) ? (v < 0.01 ? v.toExponential(2) : v.toFixed(4)) : 'NaN'),
+          value: (_u, v) => (v != null && !Number.isNaN(v) ? (v < 0.01 ? v.toExponential(2) : v.toFixed(4)) : 'NaN'),
         },
       ],
       cursor: {

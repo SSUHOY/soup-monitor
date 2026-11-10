@@ -13,6 +13,30 @@ export default function App() {
   const [activeRunData, setActiveRunData] = useState<TrainingRun | null>(null);
   const [isRunLoading, setIsRunLoading] = useState(false);
 
+    useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      
+      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement).tagName)) return;
+
+      if (runs.length === 0) return;
+
+      const currentIndex = runs.findIndex(r => r.id === selectedRunId);
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const nextIndex = currentIndex < runs.length - 1 ? currentIndex + 1 : 0;
+        setSelectedRunId(runs[nextIndex].id);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : runs.length - 1;
+        setSelectedRunId(runs[prevIndex].id);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [runs, selectedRunId]);
+
   useEffect(() => {
     setTimeout(() => {
       const initialRuns = generateAllRuns();
