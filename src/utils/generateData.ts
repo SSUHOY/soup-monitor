@@ -30,7 +30,7 @@ function generateRunMetrics(pointsCount: number, hasSpike: boolean = false): Dat
     let lr = 0.001 * (1 - i / pointsCount);
     let grad_norm = 1.5 + Math.random() * 0.5;
 
-    // Аномальный запуск
+    // Anomaly run
     if (hasSpike && i === Math.floor(pointsCount / 2)) {
       loss = 999.99;
       grad_norm = 50.0;

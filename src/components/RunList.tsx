@@ -30,7 +30,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
 
   return (
     <div className="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col h-full">
-      <h2 className="text-lg font-semibold text-white mb-4">Список запусков</h2>
+      <h2 className="text-lg font-semibold text-white mb-4">Runs list</h2>
 
       <div className="space-y-3 mb-4">
         <div className="relative">
@@ -51,7 +51,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
                 onChange={(e) => setStatusFilter(e.target.value as any)}
                 className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 pr-8 text-xs text-white focus:outline-none focus:border-blue-500 appearance-none cursor-pointer"
             >
-                <option value="all">Все статусы</option>
+                <option value="all">All statuses</option>
                 <option value="completed">Completed</option>
                 <option value="failed">Failed</option>
             </select>
@@ -71,7 +71,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
       <div className="overflow-y-auto space-y-2 pr-1 flex-1 max-h-[500px]">
         {filteredRuns.length === 0 ? (
           <div className="text-center py-8 text-slate-500 text-sm">
-            Запуски не найдены
+            Runs not found
           </div>
         ) : (
           filteredRuns.map((run) => {
@@ -102,7 +102,7 @@ export const RunList: React.FC<Props> = ({ runs, selectedRunId, onSelectRun }) =
                     <span className={run.status === 'completed' ? 'text-emerald-400' : 'text-rose-400'}>
                       ● {run.status}
                     </span>
-                    <span>{run.metrics.length.toLocaleString()} точек</span>
+                    <span>{run.metrics.length.toLocaleString()} points</span>
                   </div>
                 </div>
                 <ChevronRight className={`w-4 h-4 ${isSelected ? 'text-blue-400' : 'text-slate-600'}`} />

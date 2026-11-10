@@ -19,7 +19,7 @@ export const SummaryCards: React.FC<Props> = ({ runs }) => {
           <Database className="w-6 h-6" />
         </div>
         <div>
-          <p className="text-sm text-slate-400"> Всего запусков</p>
+          <p className="text-sm text-slate-400">All runs</p>
           <p className="text-2xl font-bold text-white">{totalRuns}</p>
         </div>
       </div>
@@ -29,7 +29,7 @@ export const SummaryCards: React.FC<Props> = ({ runs }) => {
           <CheckCircle2 className="w-6 h-6" />
         </div>
         <div>
-          <p className="text-sm text-slate-400">Успешно (Completed)</p>
+          <p className="text-sm text-slate-400">Success (Completed)</p>
           <p className="text-2xl font-bold text-white">{completedRuns}</p>
         </div>
       </div>
@@ -39,7 +39,7 @@ export const SummaryCards: React.FC<Props> = ({ runs }) => {
           <AlertTriangle className="w-6 h-6" />
         </div>
         <div>
-          <p className="text-sm text-slate-400"> Ошибки (Failed)</p>
+          <p className="text-sm text-slate-400">Errors (Failed)</p>
           <p className="text-2xl font-bold text-white">{failedRuns}</p>
         </div>
       </div>
@@ -49,7 +49,7 @@ export const SummaryCards: React.FC<Props> = ({ runs }) => {
           <Activity className="w-6 h-6" />
         </div>
         <div>
-          <p className="text-sm text-slate-400">Всего точек данных</p>
+          <p className="text-sm text-slate-400">All data points</p>
           <p className="text-2xl font-bold text-white">
             {totalPoints >= 1_000_000 ? `${(totalPoints / 1_000_000).toFixed(1)}M` : totalPoints.toLocaleString()}
           </p>

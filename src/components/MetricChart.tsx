@@ -28,7 +28,7 @@ export const MetricChart: React.FC<Props> = ({ data, metricKey, title, color }) 
     for (let i = 0; i < data.length; i++) {
       xVals.push(data[i].step);
       const val = data[i][metricKey];
-      // Если NaN или Infinity, передаем null, чтобы uPlot корректно это отобразил (или пропустил)
+     
       if (typeof val === 'number' && Number.isFinite(val)) {
         yVals.push(val);
       } else {
